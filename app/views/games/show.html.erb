@@ -1,0 +1,30 @@
+<h1>Playing Game</h1>
+<div class="row" id="playing_game">
+  <div class="col-md-6 grid" id="enemy_grid">
+    <%=render "player_grid", :heading => "Their Board:", :shots => @game.salvos.ours%>
+  </div>
+  <div class="col-md-6 grid" id="friendly_grid">
+    <%=render "player_grid", :heading => "My Board:", :shots => @game.salvos.enemy%>
+  </div>
+</div>
+
+
+<div id="legend">
+  <h3>Legend Grid</h3>
+  <%unless @game.game_over?%>
+    <% if @manually_play%>
+      <%= link_to "Auto Play", game_path(:id => @game, :manually => false),class: "ng-pristine btn btn-primary ng-scope",id: "auto_play"%>
+    <%else%>
+      <%= link_to "Manual Play", game_path(:id => @game, :manually => true),class: "ng-pristine btn btn-primary ng-scope",id: "manual_play"%>
+    <%end%>
+    <input id="game_id" name "game_id" value="<%= @game.id%>" type="hidden" />
+  <%end%>
+  <%= link_to "List My Games", games_path(),class: "ng-pristine btn btn-primary ng-scope",id: "auto_play"%>
+</div>
+<%= content_for :head do%>
+  <%= stylesheet_link_tag "play"%>
+  <%unless @game.game_over? or @manually_play%>
+     <div id="manually_play"></div>
+     <%= javascript_include_tag 'jquery.periodicalupdater','play'%>
+  <%end%>
+<%end%>

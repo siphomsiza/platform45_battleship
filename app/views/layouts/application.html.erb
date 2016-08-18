@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Platform45Battleship</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= render "/layouts/top_navigator"%>
+    <div class="container">
+      <div class="view-container">
+        <div class="jumbotron ng-scope">
+          <%= render 'layouts/messages'%>
+          <%= yield %>
+        </div>
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; 2016 Sipho Msiza</p>
+      </footer>
+
+    </div>
+  </body>
+</html>

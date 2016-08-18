@@ -1,0 +1,6 @@
+<%if @game.game_over?%>
+  window.location.href = "/games?game_over=<%=@game.id%>"
+<%else%>
+  $("#friendly_grid").html("<%= escape_javascript render(:partial => 'games/player_grid', :locals => { :shots => @game.salvos.enemy ,:heading => 'My Board:'}) %>");
+  $("#enemy_grid").html("<%= escape_javascript render(:partial => 'games/player_grid', :locals => { :shots => @game.salvos.ours ,:heading => 'Their Board:'}) %>");
+<%end%>

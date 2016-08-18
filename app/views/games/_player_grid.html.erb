@@ -1,0 +1,15 @@
+<h4><strong><%= heading%></strong></h4>
+<table>
+  <%10.times do |y|%>
+    <tr>
+      <%10.times do |x|%>
+        <%if shots.map(&:coordinates).include? [x,y]%>
+          <%shot = shots.find{|s| s.coordinates == [x,y]}%>
+          <td title="shot" class="miss"></td>
+        <%else%>
+           <td title="<%= [x,y].join(" , ")%>" align="center"><%=link_to "x", update_game_grid_games_path(:id => @game.id, :x => x, :y => y), :title => "Play x:#{x}, y:#{y}", :remote => true ,class: "click_play"%></td>
+        <%end%>
+      <%end%>
+    </tr>
+  <%end%>
+</table>
