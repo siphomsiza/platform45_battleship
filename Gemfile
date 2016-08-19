@@ -45,6 +45,7 @@ group :development, :test do
   # RSpec for Rails (http://github.com/rspec/rspec-rails)
   gem 'rspec-rails', '~> 3.0.0.beta1'
   gem 'thin'
+  gem 'pry'
 end
 
 group :development do
@@ -67,4 +68,5 @@ group :test do
   gem 'rspec'
   gem 'database_cleaner'
   gem 'test-unit'
+  gem 'webmock'
 end
