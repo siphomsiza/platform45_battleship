@@ -7,19 +7,22 @@
 <table class="table table-condensed table-striped">
   <thead>
     <tr>
+      <th class="header" data-href="" rel="tooltip" title="">Game status</th>
       <th class="header" data-href="" rel="tooltip" title="">Player Name</th>
       <th class="header" data-href="" rel="tooltip" title="">Player Email</th>
-      <th class="header" data-href="" rel="tooltip" title="">Game status</th>
       <th class="header" data-href="" rel="tooltip" title="">Action</th>
     </tr>
   </thead>
   <tbody>
     <%@games.each do |game|%>
       <tr >
+        <td ><%= link_to game.game_status || "Playing", game_path(:id => game) ,title: "Show"%></td>
         <td ><%= game.player%></td>
         <td ><%= game.player.try(:email)%></td>
-        <td ><%= game.game_status || "Playing"%></td>
-        <td ><%= game.game_status || "Playing"%></td>
+        <td>
+          <%= link_to raw("<i class='fa fa-info-circle' aria-hidden='true'></i>"), game_path(:id => game) ,title: "Show"%>
+          <%= link_to raw("<i class='fa fa-trash' aria-hidden='true'></i>"), game_path(:id => game ),method: :delete, data: { confirm: 'Are you sure?' }  ,title: "Delete"%>
+        </td>
       </tr>
     <%end%>
   </tbody>

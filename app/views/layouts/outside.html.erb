@@ -1,99 +1,54 @@
 <!DOCTYPE html>
-<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
-<!--[if !IE]><!-->
 <html lang="en">
-<!--<![endif]-->
 <head>
-	<meta charset="utf-8" />
-	<title> <%= Settings.APP_NAME %> | <%= Settings.APP_SLOGAN %></title>
-	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-	<meta content="<%= Settings.APP_DESCRIPTION %>" name="description" />
-	<meta content="Wiseallie @ MyTopDog Education" name="author" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Platform45 Battleship - Events</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <%= csrf_meta_tags %>
+  <!-- Main css styles -->
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- Main javascript files -->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true		%>
 
-
-		<!-- ================== BEGIN BASE CSS STYLE ================== -->
-		<%= stylesheet_link_tag "rails_admin/rails_admin" , media: :all%>
-	  <%= stylesheet_link_tag "application.css", media: :all %>
-
-		<!-- ================== BEGIN BASE JS ================== -->
-		<%= javascript_include_tag 'plugins/pace/pace.min' %>
-		<!-- ================== END BASE JS ================== -->
-
-		<!-- ================== BEGIN CORE JS ================== -->
-		<%= javascript_include_tag 'core' %>
-		<!--[if lt IE 9]>
-			<%= javascript_include_tag 'ie.lt9' %>
-		<![endif]-->
-		<!-- ================== END CORE JS ================== -->
-
-		<!-- ================== BEGIN PAGE LEVEL JS ================== -->
-	 	<%= javascript_include_tag 'application'%>
-		<!-- ================== END PAGE LEVEL JS ================== -->
-		<%= content_for :rails_admin_js %>
-		<script>
-			$(document).ready(function() {
-				App.init();
-				LocalFormPlugins.init();
-			});
-		</script>
-		<%= csrf_meta_tags %>
-	</head>
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
 </head>
-<body class="pace-top bg-white ">
-	<!-- begin #page-loader -->
-	<!-- <div id="page-loader" class="fade in"><span class="spinner"></span></div> -->
-	<!-- end #page-loader -->
+<body>
+  <!--top-bar start here-->
+  <%= render 'layouts/top_bar_landing_page'%>
+  <!--top-bar end here-->
 
-	<!-- begin #page-container -->
-	<!-- <div id="page-container" class="fade"> -->
-	<div id="page-container" class="fade">
+  <!-- top navigation start here -->
+  <%= render 'layouts/top_landing_navigation'%>
+  <!-- top navigation end here -->
 
-	    <!-- begin login -->
-        <div class="login animated fadeInDown  bg-black margin-bottom-0">
-            <!-- begin brand -->
-            <div class="login-header">
-                <div class="brand">
-                    <span><%= Settings.APP_NAME %></span>
-                    <small><%= Settings.APP_SLOGAN %></small>
-                </div>
-                <div class="icon">
-										<%= content_for(:logo_icon) || raw('<i class="fa fa-sign-in"></i>') %>
-                </div>
-            </div>
-            <!-- end brand -->
-            <div class="login-content ">
-								<%= render "/layouts/messages" %>
-								<%= yield %>
-            </div>
+  <!--breadcrumbs start-->
+  <%= render 'layouts/breadcrumb_nav'%>
+  <!--breadcrumbs end-->
+
+  <div class="divide80"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-2">
+        <div class="login-form">
+          <h3>Sign In <span>Or Sign Up</span></h3>
+          <%= yield %>
         </div>
-				<!-- begin login -->
-				<div class="login animated fadeInDown bg-white margin-top-0 margin-bottom-0" >
-					<div class="login-content ">
-						<%= content_for :shared_login_links %>
-					</div>
-				</div>
-        <!-- end login -->
-				<!-- begin #footer -->
-				<div >
-					<!-- Footer Here -->
-					<center>
-							&copy <%= Settings.APP_NAME %> <%= Time.now.year %> <br/>
-							<a href="<%= about_us_url%>">About Us</a>
-	            &nbsp;|&nbsp;
-	            <a href="<%= privacy_policy_url%>">Privacy Policy</a>
-	            &nbsp;|&nbsp;
-	            <a href="<%= terms_of_use_url%>">Terms of Use</a>
-	            &nbsp;|&nbsp;
-	            <a href="<%= contact_us_url%>">Contact Us</a>
-	            &nbsp;|&nbsp;
-	            <a href="<%= faq_url%>">Frequently Asked Questions</a>
-				</center>
-			</div>
-
-				<!-- end #footer -->
-	</div>
-	<!-- end page container -->
-
+      </div>
+    </div>
+  </div>
+  <div class="divide60"></div>
+  <!--footer start-->
+  <%= render 'layouts/footer'%>
+  <!--footer end-->
 </body>
 </html>

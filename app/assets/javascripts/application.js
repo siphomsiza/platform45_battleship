@@ -20,3 +20,25 @@
 //= require custom
 //= require play
 //= require jquery.periodicalupdater
+
+
+// ===============================
+//= require home_page/home.js
+//= require home_page/custom_confirm_alert.js
+//= require home_page/js/jquery.min.js
+//= require home_page/js/bootstrap.min.js
+//= require home_page/js/jquery.easing.1.3.min.js
+//= require home_page/js/jquery.sticky.js
+//= require home_page/js/jquery.flexslider-min.js
+//= require home_page/js/jquery.stellar.min.js
+//= require home_page/js/waypoints.min.js
+//= require home_page/js/jquery.counterup.min.js
+//= require home_page/js/wow.min.js
+//= require home_page/js/owl.carousel.min.js
+//= require home_page/js/jquery.magnific-popup.min.js
+//= require home_page/js/jquery.mb.YTPlayer.min.js
+//= require home_page/js/custom.js
+//= require home_page/js/jquery.countdown.min.js
+//= require home_page/js/countdown.js
+//= require home_page/js/sweetalert.min.js
+//= require turbolinks
