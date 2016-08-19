@@ -26,5 +26,15 @@
   <%unless @game.game_over? or @manually_play%>
      <div id="manually_play"></div>
      <%= javascript_include_tag 'jquery.periodicalupdater','play'%>
+     <script>
+       $(document).ready(function() {
+         $.PeriodicalUpdater("#{update_grid_path}", {
+           method: 'get',
+           data: {id: "#{@game.id}"},
+           minTimeout: 1500,
+           maxTimeout: 4000
+         });
+       });
+     </script>
   <%end%>
 <%end%>
