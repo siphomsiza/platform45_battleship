@@ -1,10 +1,10 @@
+include Platform45
 class CreateGameService < ServiceBase
   def create_ship_record(game_id, placement)
     s = Platform45Ship.new({platform45_game_id: game_id, name: placement[:name], owner: "me", x: placement[:x], y: placement[:y], orientation: placement[:orientation]})
     s.save
     duplicate_ship s
   end
-
 
   def duplicate_ship(ship, owner = "them")
     s2 = ship
