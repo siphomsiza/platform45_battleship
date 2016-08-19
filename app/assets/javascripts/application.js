@@ -12,11 +12,11 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jquery.periodicalupdater
+//= require play
 
 // <!-- ================== BEGIN COLOR ADMIN PAGE LEVEL  ================== -->
 //=  require 'color_admin_page_level'
 // <!-- ================== END COLOR ADMIN PAGE LEVEL ================== -->
 
 //= require custom
-//= require jquery.periodicalupdater
-//= require play

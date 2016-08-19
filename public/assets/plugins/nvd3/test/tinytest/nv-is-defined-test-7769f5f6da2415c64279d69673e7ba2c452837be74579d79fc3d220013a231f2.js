@@ -1,0 +1,1 @@
+Tinytest.add("nv object is defined",function(e){e.isNotUndefined(nv,"nv is undefined at global scope for Meteor")});

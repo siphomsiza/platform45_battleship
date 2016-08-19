@@ -1,0 +1,1 @@
+d3.selectAll(".chart button").on("click",function(){var e=this.parentElement.id,t=d3.select("#"+e);t.attr("class").match("selected")?t.classed("selected",!1):t.classed("selected",!0),d3.selectAll(".chart").style("display",function(){return e===this.id?"block":"none"===d3.select(this).style("display")?"block":"none"}),window.onresize()});
