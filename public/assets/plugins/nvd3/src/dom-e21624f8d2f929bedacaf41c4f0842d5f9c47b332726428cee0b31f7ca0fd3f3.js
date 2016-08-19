@@ -1,1 +1,0 @@
-nv.dom.write=function(d){return void 0!==window.fastdom?fastdom.write(d):d()},nv.dom.read=function(d){return void 0!==window.fastdom?fastdom.read(d):d()};

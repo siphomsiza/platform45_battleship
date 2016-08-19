@@ -1,1 +1,0 @@
-var handleSuperboxGallery=function(){"use strict";$(".superbox").SuperBox()},Gallery=function(){"use strict";return{init:function(){$.getScript("assets/plugins/superbox/js/superbox.js").done(function(){handleSuperboxGallery()})}}}();
