@@ -32,7 +32,7 @@ module Platform45
       uri = "/nuke"
       req = Net::HTTP::Post.new(uri) #, initheader = {'Content-Type' =>'application/json'})
       req.body = params.to_json
-      resp = Net::HTTP.new(battle_host).start{|http| http.request(req)}
+      Net::HTTP.new(battle_host).start{|http| http.request(req)}
     end
 
     def battle_host

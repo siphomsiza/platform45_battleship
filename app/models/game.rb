@@ -10,6 +10,11 @@ class Game < ApplicationRecord
 
   after_create :create_ships
 
+  def ship_name_sink(name)
+    ship_to_sink = ships.alive.where(:name => name).first
+    ship_to_sink.sink! if ship_to_sink
+  end
+
   def move_game(coords={})
     unless game_status
       if x = coords[:x] and y = coords[:y]
@@ -43,7 +48,7 @@ class Game < ApplicationRecord
     [{"Carrier"     => 5}, {"Battleship" => 4}, {"Destroyer"   => 3},
      {"Submarine"   => 2}, {"Submarine"  => 2}, {"Patrol Boat" => 1},
      {"Patrol Boat" => 1}].each do |ship_info|
-      ships.create(:name => ship_info.keys.first, :length => ship_info.values.first)
+      ships.create!(:name => ship_info.keys.first, :length => ship_info.values.first)
     end
   end
 

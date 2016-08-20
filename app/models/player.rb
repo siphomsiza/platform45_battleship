@@ -14,6 +14,8 @@ class Player < ApplicationRecord
   foreign_key: :player_id,
   dependent: :destroy
 
+  validates :name,:email,presence: true
+
   def to_s
     name
   end

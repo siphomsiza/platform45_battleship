@@ -38,7 +38,6 @@ class GamesController < ApplicationController
     respond_to do |format|
       flash.now[:notice] = "Game is successfully deleted"
       format.html { redirect_to games_url }
-      format.json { head :no_content }
     end
   end
 end

@@ -70,3 +70,4 @@ group :test do
   gem 'test-unit'
   gem 'webmock'
 end
+gem 'rails-controller-testing'

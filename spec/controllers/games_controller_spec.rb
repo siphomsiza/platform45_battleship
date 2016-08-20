@@ -1,19 +1,18 @@
 require 'spec_helper'
+ # include Devise::Test::ControllerHelpers
+require 'shared/rest_api_controller'
 
-describe GameController do
+describe GamesController do
+  context "CRUD actions as part of a company" do
+    before (:each) do
+      player = FactoryGirl.create(:player)
+      sign_in(player)
+      @subject = create(:game, :player => player,:p45_game_id=> 1234)
+      @built_subject = build(:game, :player => player)
+      @params = {:format => :html ,id: @subject.id}
 
-  describe "GET 'new'" do
-    it "returns http success" do
-      get 'new'
-      response.should be_success
     end
-  end
-
-  describe "GET 'show'" do
-    it "returns http success" do
-      get 'show'
-      response.should be_success
-    end
+    it_behaves_like "REST API controller"
   end
 
 end

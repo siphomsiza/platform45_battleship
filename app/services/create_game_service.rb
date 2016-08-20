@@ -1,4 +1,7 @@
 include Platform45
+require './lib/platform45/api_request'
+require './lib/platform45/api_response'
+
 class CreateGameService < ServiceBase
   def create_ship_record(game_id, placement)
     s = Platform45Ship.new({platform45_game_id: game_id, name: placement[:name], owner: "me", x: placement[:x], y: placement[:y], orientation: placement[:orientation]})
@@ -14,6 +17,7 @@ class CreateGameService < ServiceBase
   end
 
   def failed_response(game, api_response)
+    raise api_response.error.inspect
     ServiceResponse.new(api_response.error)
   end
 

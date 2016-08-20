@@ -16,6 +16,9 @@ Things you may want to cover:
 * Database initialization
 
 * How to run the test suite
+  RAILS_ENV=test rake test:prepare
+  RAILS_ENV=test rake db:drop db:create db:migrate
+  $ bundle exec rspec spec/models/player_spec.rb
 
 * Services (job queues, cache servers, search engines, etc.)
 
