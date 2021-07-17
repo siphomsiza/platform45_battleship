@@ -17,7 +17,6 @@ class CreateGameService < ServiceBase
   end
 
   def failed_response(game, api_response)
-    raise api_response.error.inspect
     ServiceResponse.new(api_response.error)
   end
 

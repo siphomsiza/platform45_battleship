@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 
-
+ruby '2.6.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.0'
 # Use postgres as the database for Active Record
 gem 'pg'
-# Use Puma as the app server
-gem 'puma', '~> 3.0'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -30,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 
 # Easiest way to add multi-environment yaml settings to Rails, Sinatra, Pandrino and other ruby projects. (https://github.com/railsconfig/config)
-gem 'config'
+gem 'config','3.0.0'
 
 
 group :development, :test do
@@ -62,7 +61,7 @@ group :production do
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem 'heroku'
+#gem 'heroku'
 
 group :test do
   gem 'rspec'
@@ -71,3 +70,4 @@ group :test do
   gem 'webmock'
 end
 gem 'rails-controller-testing'
+gem 'rake', '< 11.0'
