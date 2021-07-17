@@ -70,4 +70,4 @@ group :test do
   gem 'webmock'
 end
 gem 'rails-controller-testing'
-gem 'rake', '< 11.0'
+gem 'rake', '< 13.0'
