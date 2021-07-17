@@ -1,0 +1,1 @@
+!function(i){i.effects.effect.fade=function(e,t){var a=i(this),f=i.effects.setMode(a,e.mode||"toggle");a.animate({opacity:f},{queue:!1,duration:e.duration,easing:e.easing,complete:t})}}(jQuery);

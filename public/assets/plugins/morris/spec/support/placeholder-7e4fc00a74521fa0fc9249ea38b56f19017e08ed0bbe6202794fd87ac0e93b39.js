@@ -1,0 +1,1 @@
+(function(){beforeEach(function(){var t;return t=$('<div id="graph" style="width: 600px; height: 400px"></div>'),$("#test").append(t)}),afterEach(function(){return $("#test").empty()})}).call(this);

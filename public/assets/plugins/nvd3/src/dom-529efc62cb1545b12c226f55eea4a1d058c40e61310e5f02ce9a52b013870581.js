@@ -1,0 +1,1 @@
+nv.dom.write=function(d){return window.fastdom!==undefined?fastdom.write(d):d()},nv.dom.read=function(d){return window.fastdom!==undefined?fastdom.read(d):d()};

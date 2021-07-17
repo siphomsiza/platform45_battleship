@@ -1,0 +1,1 @@
+$(document).ready(function(){var e=$(".mas-boxes"),t=30,i=300;e.imagesLoaded(function(){e.masonry({itemSelector:".mas-boxes-inner",gutterWidth:t,isAnimated:!0,columnWidth:function(e){var n=(e-2*t)/3|0;return n<i&&(n=(e-t)/2|0),n<i&&(n=e),$(".mas-boxes-inner").width(n),n}})})});
